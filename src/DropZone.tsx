@@ -1,6 +1,6 @@
 import { useDrop } from "react-dnd";
 
-export const DropZone = ({ id, solution, position, assignedLabel, onDrop, removeLabel, toggleSolution, checkResult }: any) => {
+export const DropZone = ({ id, solution, position, color, assignedLabel, onDrop, removeLabel, toggleSolution, checkResult }: any) => {
     const [{ isOver, canDrop }, drop] = useDrop(() => ({
         accept: "LABEL",
         drop: (item: any) => onDrop(id, item.label),
@@ -29,7 +29,7 @@ export const DropZone = ({ id, solution, position, assignedLabel, onDrop, remove
                 width: `${position[2]}%`,
                 height: `${position[3]}%`,
                 borderRadius: "4px",
-                border: "1px solid #ccc",
+                border: `2px solid ${color || "#ccc"}`,
                 backgroundColor: highlight,
                 color: "black",
                 fontSize: "0.9em",

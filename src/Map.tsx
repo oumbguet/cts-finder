@@ -2,6 +2,7 @@ import { useRef, useEffect } from "react";
 import map from './assets/map.png';
 import { stops } from "./data";
 import { DropZone } from "./DropZone";
+import { lines } from "./data";
 
 const Map = ({ onResize, assignments, setAssignments, toggleSolution, checkResult }: any) => {
     const handleDrop = (zoneId: any, label: any) => {
@@ -34,7 +35,7 @@ const Map = ({ onResize, assignments, setAssignments, toggleSolution, checkResul
                 height: 'auto',
             }} />
             {stops.map((stop) => (
-                <DropZone id={stop.name} key={stop.name} solution={stop.name} position={stop.position} assignedLabel={assignments[stop.name]} onDrop={handleDrop} toggleSolution={toggleSolution} checkResult={checkResult} removeLabel={() => {
+                <DropZone id={stop.name} key={stop.name} solution={stop.name} position={stop.position} color={stop.lines.length == 1 ? lines.find((line: any) => line.name == stop.lines[0])?.color : "#ccc"} assignedLabel={assignments[stop.name]} onDrop={handleDrop} toggleSolution={toggleSolution} checkResult={checkResult} removeLabel={() => {
                     setAssignments((prev: any) => {
                         const newAssignments = { ...prev };
                         delete newAssignments[stop.name];
