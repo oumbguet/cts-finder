@@ -35,7 +35,6 @@ const stops = [
     { name: "Lingolsheim Alouettes", lines: ["B"], position: [4.4, 78.2, 20, 3] },
     { name: "Lingolsheim Tiergartel", lines: ["B"], position: [1, 82.3, 11.8, 3.3] },
 
-    { name: "Lycée Jean Monnet", lines: ["C"], position: [0, 0, 14, 2] },
     { name: "Fbg de Saverne Les Halles", lines: ["C"], position: [40, 42.9, 24, 2.4] },
     { name: "Lycée Jean Monnet", lines: ["C"], position: [63.5, 78.8, 20, 2.7] },
     { name: "Gravière Stade de la Meinau", lines: ["C"], position: [63.5, 81.9, 20, 2.7] },
@@ -43,7 +42,6 @@ const stops = [
     { name: "Saint-Christophe", lines: ["C"], position: [63.5, 89.3, 20, 2.7] },
     { name: "Neuhof Rodolphe Reuss", lines: ["C"], position: [65.5, 93, 16.6, 3] },
 
-    { name: "Kehl Bahnhof", lines: ["D"], position: [0, 0, 14, 2] },
     { name: "Marcel Rudloff", lines: ["D"], position: [3, 39.4, 9, 2.6] },
     { name: "Paul Éluard", lines: ["D"], position: [9, 36.6, 7.5, 2.6] },
     { name: "Aristide Briand", lines: ["D"], position: [79, 69.8, 10.8, 2.6] },
@@ -92,7 +90,6 @@ const stops = [
     { name: "Stade Vauban", lines: ["G"], position: [91.8, 62, 8, 3.6] },
     { name: "Rotterdam", lines: ["G"], position: [87, 43.6, 10.9, 2] },
 
-    { name: "Esplanade", lines: ["C", "E"], position: [0, 0, 14, 2] },
     { name: "Wacken", lines: ["E", "B"], position: [49.5, 30.3, 14.8, 2.1] },
     { name: "Palais de la Musique et des Congrès", lines: ["E", "B"], position: [68.9, 31.8, 14, 5] },
     { name: "Lycée Kléber", lines: ["E", "B"], position: [68.9, 37, 14, 2.3] },
