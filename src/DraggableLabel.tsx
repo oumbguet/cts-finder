@@ -11,7 +11,7 @@ export const DraggableLabel = ({ label }: { label: string }) => {
 
   return (
     // @ts-ignore
-    <div ref={drag} key={label} style={{padding: "4px", borderRadius: "4px", backgroundColor: "#ffffff", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", width: "100%", boxSizing: "border-box"}}>
+    <div ref={drag} key={label} style={{padding: "4px", borderRadius: "4px", backgroundColor: "#ffffff", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", width: "100%", boxSizing: "border-box", userSelect: "none", opacity: isDragging ? 0.5 : 1, cursor: "move"}}>
         {label}
     </div>
   );

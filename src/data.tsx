@@ -9,7 +9,18 @@ const lines = [
 ];
 const stops = [
     { name: "Graffenstaden", lines: ["A"], position: [1, 89.8, 14, 1.8] },
-    { name: "Cours de l'Illiade", lines: ["A"], position: [1, 89.8, 14, 1.8] },
+    { name: "Cours de l'Illiade", lines: ["A"], position: [5, 97, 10.8, 2.5] },
+    { name: "Parc Malraux", lines: ["A"], position: [16.1, 97, 10.8, 2.5] },
+    { name: "Illkirch Lixenbuhl", lines: ["A"], position: [27.2, 97, 10.8, 2.5] },
+    { name: "Campus d'Illkirch", lines: ["A"], position: [37.2, 94.1, 17.4, 2.2] },
+    { name: "Leclerc", lines: ["A"], position: [16.4, 90, 17, 2] },
+    { name: "Colonne", lines: ["A"], position: [19.4, 87.3, 17, 2] },
+    { name: "Baggersee", lines: ["A"], position: [41.4, 88.9, 17, 2] },
+    { name: "Hohwart", lines: ["A"], position: [24.7, 83.3, 17, 2] },
+    { name: "Émile Mathis", lines: ["A"], position: [28, 80.8, 17, 2] },
+    { name: "Lycée Couffignal", lines: ["A"], position: [31.2, 78.4, 17, 2] },
+    { name: "Krimmeri Stade de la Meinau", lines: ["A"], position: [34.4, 75, 17, 3] },
+    { name: "Schluthfeld", lines: ["A"], position: [37.8, 72.7, 17, 2] },
 
     { name: "Lingolsheim Tiergartel", lines: ["B"], position: [1, 82.3, 11.8, 3.3] },
     { name: "Lingolsheim Alouettes", lines: ["B"], position: [4.4, 78.2, 20, 3] },

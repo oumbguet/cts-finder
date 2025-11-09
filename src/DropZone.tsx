@@ -30,6 +30,9 @@ export const DropZone = ({ id, position, assignedLabel, onDrop, removeLabel }: a
                 overflow: "hidden",
                 whiteSpace: "nowrap",
                 textOverflow: "ellipsis",
+                verticalAlign: "middle",
+                textAlign: "center",
+                lineHeight: `${position[3] * 85}%`,
                 cursor: assignedLabel ? "pointer" : "default",
             }}
             onClick={removeLabel}

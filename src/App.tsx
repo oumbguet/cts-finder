@@ -8,7 +8,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 function App() {
   const [mapSize, setMapSize] = useState({ width: 0, height: 0 });
   const [assignments, setAssignments] = useState({});
-  const [toggleSolution, setToggleSolution] = useState(false);
+  const [toggleSolution, setToggleSolution] = useState(true);
 
   return (
     <DndProvider backend={HTML5Backend}>
