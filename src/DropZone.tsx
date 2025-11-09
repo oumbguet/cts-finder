@@ -1,6 +1,6 @@
 import { useDrop } from "react-dnd";
 
-export const DropZone = ({ id, position, assignedLabel, onDrop, removeLabel }: any) => {
+export const DropZone = ({ id, solution, position, assignedLabel, onDrop, removeLabel, toggleSolution, checkResult }: any) => {
     const [{ isOver, canDrop }, drop] = useDrop(() => ({
         accept: "LABEL",
         drop: (item: any) => onDrop(id, item.label),
@@ -10,7 +10,13 @@ export const DropZone = ({ id, position, assignedLabel, onDrop, removeLabel }: a
         }),
     }));
 
-    const highlight = isOver && canDrop ? "rgba(0,255,0,1)" : "white";
+    const isCorrect = () => {
+        console.log("Check result", checkResult);
+        if (!assignedLabel || !checkResult) return "white";
+
+        return assignedLabel === solution ? "rgba(117, 255, 117, 1)" : "rgba(255, 128, 128, 1)";
+    }
+    const highlight = isOver && canDrop ? "rgba(0,255,0,1)" : isCorrect();
 
     return (
         <div
@@ -25,19 +31,20 @@ export const DropZone = ({ id, position, assignedLabel, onDrop, removeLabel }: a
                 borderRadius: "4px",
                 border: "1px solid #ccc",
                 backgroundColor: highlight,
-                fontSize: "0.8em",
+                color: "black",
+                fontSize: "0.9em",
                 fontWeight: "bold",
                 overflow: "hidden",
                 whiteSpace: "nowrap",
                 textOverflow: "ellipsis",
                 verticalAlign: "middle",
                 textAlign: "center",
-                lineHeight: `${position[3] * 85}%`,
+                lineHeight: `${position[3] * 75}%`,
                 cursor: assignedLabel ? "pointer" : "default",
             }}
             onClick={removeLabel}
         >
-            {assignedLabel || ""}
+            {toggleSolution ? solution : assignedLabel}
         </div>
     );
 };

@@ -3,7 +3,7 @@ import map from './assets/map.png';
 import { stops } from "./data";
 import { DropZone } from "./DropZone";
 
-const Map = ({ onResize, assignments, setAssignments, toggleSolution }: any) => {
+const Map = ({ onResize, assignments, setAssignments, toggleSolution, checkResult }: any) => {
     const handleDrop = (zoneId: any, label: any) => {
         setAssignments((prev: any) => ({ ...prev, [zoneId]: label }));
     };
@@ -33,8 +33,8 @@ const Map = ({ onResize, assignments, setAssignments, toggleSolution }: any) => 
                 width: '100%',
                 height: 'auto',
             }} />
-            {toggleSolution && stops.map((stop) => (
-                <DropZone id={stop.name} key={stop.name} position={stop.position} assignedLabel={assignments[stop.name]} onDrop={handleDrop} removeLabel={() => {
+            {stops.map((stop) => (
+                <DropZone id={stop.name} key={stop.name} solution={stop.name} position={stop.position} assignedLabel={assignments[stop.name]} onDrop={handleDrop} toggleSolution={toggleSolution} checkResult={checkResult} removeLabel={() => {
                     setAssignments((prev: any) => {
                         const newAssignments = { ...prev };
                         delete newAssignments[stop.name];

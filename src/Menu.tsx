@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { lines, stops } from "./data";
 import { DraggableLabel } from "./DraggableLabel";
 
-const Menu = ({ mapSize, assignments, toggleSolution }: { mapSize: { width: number, height: number }, assignments: any, toggleSolution: Function }) => {
+const Menu = ({ mapSize, assignments, toggleSolution, toggleToggleSolution, checkResult, toggleCheckResult }: { mapSize: { width: number, height: number }, assignments: any, toggleSolution: boolean, toggleToggleSolution: Function, checkResult: boolean, toggleCheckResult: Function }) => {
     const usedLabels = Object.values(assignments);
     const availableLabels = stops.filter((stop: any) => !usedLabels.includes(stop.name));
 
@@ -11,7 +11,7 @@ const Menu = ({ mapSize, assignments, toggleSolution }: { mapSize: { width: numb
     }, [mapSize]);
 
     return (
-        <div style={{flexGrow: '1', backgroundColor: "#f0e6d2", padding: "8px", borderRadius: "8px", display: "flex", flexDirection: "column", gap: "10px", alignItems: "start", "overflowY": "scroll", maxHeight: mapSize.height - 100}}>
+        <div style={{flexGrow: '1', backgroundColor: "#f0e6d2", padding: "8px", borderRadius: "8px", display: "flex", flexDirection: "column", gap: "10px", alignItems: "start", "overflowY": "scroll", maxHeight: "70vh"}}>
             {/* {mapHeight},
             {mapWidth} */}
             <h3 style={{alignSelf: "center"}}>Arrêts</h3>
@@ -34,7 +34,8 @@ const Menu = ({ mapSize, assignments, toggleSolution }: { mapSize: { width: numb
                 ))
             }
 
-            <span style={{alignSelf: "center", cursor: "pointer", userSelect: "none"}} onClick={() => toggleSolution()}>Voir la solution</span>
+            <span style={{alignSelf: "center", cursor: "pointer", userSelect: "none"}} onClick={() => toggleCheckResult()}>{checkResult ? "Cacher mon résultat" : "Voir mon résultat"}</span>
+            <span style={{alignSelf: "center", cursor: "pointer", userSelect: "none"}} onClick={() => toggleToggleSolution()}>{toggleSolution ? "Cacher la solution" : "Voir la solution"}</span>
         </div>
     );
 };
